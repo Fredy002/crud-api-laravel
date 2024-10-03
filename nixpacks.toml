@@ -1,0 +1,8 @@
+# nixpacks.toml
+
+[build]
+language = "php"
+
+[build.dependencies.php]
+version = "8.3"
+extensions = ["pdo_mysql", "mbstring", "tokenizer", "xml", "openssl"]
