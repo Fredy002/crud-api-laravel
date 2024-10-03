@@ -5,4 +5,7 @@ language = "php"
 
 [build.dependencies.php]
 version = "8.3"
-extensions = ["pdo_mysql", "mbstring", "tokenizer", "xml", "openssl"]
+extensions = ["pdo_mysql", "mbstring", "tokenizer", "xml", "openssl", "zip"]
+
+[build.dependencies.nodejs]
+version = "18.x"
