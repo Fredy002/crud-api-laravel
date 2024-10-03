@@ -3,26 +3,17 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function () {
-    return 'User List';
-});
+use App\Http\Controllers\Api\userController;
 
-Route::get('/user', function () {
-    return 'Lista de usuarios';
-});
+Route::get('/user', [userController::class, 'index']);
 
-Route::get('/user/{id}', function () {
-    return 'Usario obtenido';
-});
 
-Route::post('/user', function () {
-    return 'Creando usuario';
-});
+Route::get('/user/{id}', [userController::class, 'show']);
 
-Route::put('/user/{id}', function () {
-    return 'Actualizando usuario';
-});
+Route::post('/user', [userController::class, 'store']);
 
-Route::delete('/user/{id}', function () {
-    return 'Eliminando usuario';
-});
+Route::put('/user/{id}', [userController::class, 'update']);
+
+Route::patch('/user/{id}', [userController::class, 'updatePartial']);
+
+Route::delete('/user/{id}', [userController::class, 'destroy']);
