@@ -13,7 +13,9 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 require __DIR__.'/../vendor/autoload.php';
 
 // Bootstrap Laravel and handle the request...
-(require_once __DIR__.'/../bootstrap/app.php')
-    ->handleRequest(Request::capture());
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-$port = env('PORT', 8000);
+// Handle the incoming request through Laravel's HTTP kernel
+$app->make(Illuminate\Contracts\Http\Kernel::class)->handle(
+    Request::capture()
+)->send();
