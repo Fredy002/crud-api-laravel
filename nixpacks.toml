@@ -9,3 +9,6 @@ extensions = ["pdo_mysql", "mbstring", "tokenizer", "xml", "openssl", "zip"]
 
 [build.dependencies.nodejs]
 version = "18.x"
+
+[start]
+command = "./start.sh"
